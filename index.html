@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="PL-pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menedżer zadań (TO-DO)</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Menedżer zadań (TO-DO)</h1>
+        </header>
+
+        <div class="content">
+            <form class="task_form">
+                <input type="text" id="task_input" placeholder="Treść zadania (min. 3 znaki)">
+                <div id="error_text" class="error_text">Treść nie może być pusta i musi mieć co najmniej 3 znaki</div>
+                <select id="priority_select">
+                    <option value="niski">Niski</option>
+                    <option value="sredni" selected>Średni</option>
+                    <option value="wysoki">Wysoki</option>
+                </select>
+
+                <button type="submit">Dodaj</button>
+            </form>
+
+            <!-- filtry dok -->
+            <div class="filters_bar">
+
+            </div>
+
+            <!-- Licznik dok -->
+            <div class="stats_bar">
+                <div id="task_counter" class="task_counter">Zadań: 0, ukończonych: 0 (0%)</div>
+                <div class="buttons_t">
+                    <button type="button" id="mark_all_done">Zaznacz wszystkie jako gotowe</button>
+                    <button type="button" id="delete_completed">Usuń ukończone</button>
+                </div>
+            </div>
+
+            <ul id="task_list" class="task_list"></ul>
+
+            <div id="empty_message" class="empty_message">
+                Brak zadań do wyświetlenia
+            </div>
+        </div>
+    </div>
+</body>
+</html>
