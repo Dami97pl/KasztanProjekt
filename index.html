@@ -7,46 +7,50 @@
     <link rel="stylesheet" href="main.css">
     <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
     <script>
-        
+        $(function(){
+            
+        })
     </script>
 </head>
 <body>
-    <div class="container">
+    <div class="kontener">
         <header>
             <h1>Menedżer zadań (TO-DO)</h1>
         </header>
 
-        <div class="content">
-            <form class="task_form">
-                <input type="text" id="task_input" placeholder="Treść zadania (min. 3 znaki)">
-                <div id="error_text" class="error_text">Treść nie może być pusta i musi mieć co najmniej 3 znaki</div>
-                <select id="priority_select">
+        <div class="zawartosc">
+            <form class="formularz">
+                <input type="text" id="tresc" placeholder="Treść zadania (min. 3 znaki)">
+                <select id="priorytet">
                     <option value="niski">Niski</option>
                     <option value="sredni" selected>Średni</option>
                     <option value="wysoki">Wysoki</option>
                 </select>
-
                 <button type="submit">Dodaj</button>
             </form>
 
-            <!-- filtry dok -->
-            <div class="filters_bar">
-
+            <div class="filtry">
+                <button type="button" class="filtr_status wszystkie">Wszystkie</button>
+                <button type="button" class="filtr_status aktywne">Aktywne</button>
+                <button type="button" class="filtr_status ukonczone">Ukończone</button>
+                <select id="filtr_priorytet">
+                    <option value="wszystkie">Wszystkie priorytety</option>
+                    <option value="niski">Niski</option>
+                    <option value="sredni">Średni</option>
+                    <option value="wysoki">Wysoki</option>
+                </select>
             </div>
 
-            <!-- Licznik dok -->
-            <div class="stats_bar">
-                <div id="task_counter" class="task_counter">Zadań: 0, ukończonych: 0 (0%)</div>
-                <div class="buttons_t">
-                    <button type="button" id="mark_all_done">Zaznacz wszystkie jako gotowe</button>
-                    <button type="button" id="delete_completed">Usuń ukończone</button>
-                </div>
+            <div class="pasek">
+                <div id="licznik_zadan" class="licznik_zadan">Zadań: 0, ukończonych: 0 (0%)</div>
+                <button type="button" id="wszystkie_gotowe">Zaznacz wszystkie jako gotowe</button>
+                <button type="button" id="usun_ukonczone">Usuń ukończone</button>
             </div>
 
-            <ul id="task_list" class="task_list"></ul>
+            <ul id="lista" class="lista"></ul>
 
-            <div id="empty_message" class="empty_message">
-                Brak zadań do wyświetlenia
+            <div id="brak_zadan" class="brak_zadan">
+                <p>Brak zadań do wyświetlenia</p>
             </div>
         </div>
     </div>

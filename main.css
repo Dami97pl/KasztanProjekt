@@ -12,6 +12,18 @@ header{
     background-color: #2563eb;
 }
 
-.container{
+.kontener{
     background-color: #8dbeee;
+}
+
+.niski{
+    background-color: red;
+}
+
+.sredni{
+    background-color: yellow;
+}
+
+.wysoki{
+    background-color: lightgreen;
 }
